@@ -204,4 +204,13 @@
   padding-top: 1rem;
   padding-bottom: 1rem;
   list-style: none;
+  cursor: pointer;
+}
+
+.note__itempComplete {
+  text-decoration: line-through;
+}
+
+.notes_minusItem {
+  background-color: $bluePrimary;
 }

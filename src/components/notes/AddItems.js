@@ -63,7 +63,7 @@ export const AddItems = () => {
       />
       <button
         className='btn-primary btn-delete btn-add'
-      >Done
+      >Lista completa
       </button>
       <div className='notes__addItem-buttons'>
         <button
@@ -76,13 +76,18 @@ export const AddItems = () => {
       <div>
         <ul className='note__listsItem'>
           {listing.map((value, id) => (
-            <li key={value.id}>
-              <button
-                onClick={() => handleDelete(value.id)}
-              >
-                <i className="fa-solid fa-minus btn-addItem "></i>
-              </button>
-              {value.name}</li>
+            <li key={value.id} >
+              <div onClick={() => handleToggle(value.id)} className={`${value.done && 'note__itempComplete'}`}>
+
+                <button
+                  onClick={() => handleDelete(value.id)}
+                  clasName="btn-primary btn-addItem"
+                >
+                  <i className="fa-solid fa-minus btn-minus"></i>
+                </button>
+                {value.name}
+              </div>
+            </li>
           ))}
         </ul>
       </div>
